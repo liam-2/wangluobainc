@@ -76,7 +76,7 @@ public class test {
     }
 
     /**
-     * @description: 2020 桃子总数
+     * @description: 1020 桃子总数
      * @create by: linyuan
      * @create time: 2022/9/7 16:53
      */
@@ -89,7 +89,7 @@ public class test {
     }
 
     /**
-     * @description: TODO
+     * @description: 1021 迭代求平方根
      * @create by: linyuan
      * @create time: 2022/9/8 13:51
      */
