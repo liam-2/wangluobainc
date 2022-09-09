@@ -293,7 +293,81 @@ public class test {
     }
 
 
-    
+    /**
+     * @description: 1027 辗转相除法 公约数 公倍数
+     * @create by: linyuan
+     * @create time: 2022/9/9 15:16
+     */
+    static  List<Integer> getCommonDivisor(int m,int n){
+        List<Integer> resultList=new ArrayList<>();
+        if(m>n){
+            resultList.add(gcd(m,n));
+        }else{
+            resultList.add(gcd(n,m));
+        }
+        resultList.add(m*n/resultList.get(0));
+        return resultList;
+    }
+    static int gcd(int m,int n){
+        if(n==1||m%n==0){
+            return n;
+        }else{
+            return gcd(n,m%n);
+        }
+    }
+
+    /**
+     * @description: 1027 更减相损法 公约数 公倍数
+     * @create by: linyuan
+     * @create time: 2022/9/9 15:16
+     */
+    static  List<Integer> getCommonDivisor2(int m,int n){
+        List<Integer> resultList=new ArrayList<>();
+        resultList.add(gcd2(n,m));
+        resultList.add(m*n/resultList.get(0));
+        return resultList;
+    }
+    static int gcd2(int m,int n){
+        if(n>m){
+            return gcd2(n,m);
+        }else if(n==1||m==n){
+            return n;
+        }else{
+            return gcd2(n,m-n);
+        }
+    }
+
+    /**
+     * @description: 1027 移位更减相损法 公约数 公倍数
+     * @create by: linyuan
+     * @create time: 2022/9/9 15:16
+     */
+    static  List<Integer> getCommonDivisor3(int m,int n){
+        List<Integer> resultList=new ArrayList<>();
+        resultList.add(gcd3(n,m));
+        resultList.add(m*n/resultList.get(0));
+        return resultList;
+    }
+    static int gcd3(int m,int n){
+        if(n>m){
+            return gcd3(n,m);
+        }else if(n==1||m==n){
+            return n;
+        }else{
+            int a=m&1;
+            int b=n&1;
+            //偶数移位
+            if(a==0&&b==0){
+                return gcd3(m>>1,n>>1)<<1;
+            }else if(a==0&&b==1){
+                return gcd3(m>>1,n);
+            }else if(a==1&b==0){
+                return gcd3(m,n>>1);
+            }else{
+                return gcd3(n,m-n);
+            }
+        }
+    }
 
 
 
@@ -317,13 +391,12 @@ public class test {
 //        List<Integer> list = new ArrayList<>(arr.length);
 //        Collections.addAll(list, arr);
 
-
-        long startTime_N=System.currentTimeMillis();
-        List<Integer> primeList=getBackwardList(numList);
-        long endTime_N=System.currentTimeMillis();
+        long startTime_N=System.nanoTime();
+        List<Integer> primeList=getCommonDivisor2(numList.get(0),numList.get(1));
+        long endTime_N=System.nanoTime();
         System.out.println(primeList);
 //        System.out.println("数量是"+primeList.size());
         long time=1000*endTime_N-1000*startTime_N;
-        System.out.println("程序运行时间："+time/1000+"ms");
+        System.out.println("程序运行时间："+time);
     }
 }
