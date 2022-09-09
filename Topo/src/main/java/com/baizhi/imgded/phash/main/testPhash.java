@@ -21,14 +21,14 @@ public class testPhash extends imgeded {
 
 	public static void main(String[] args) {
 //		System.out.println("hello");
-//		Phash phash = new Phash();
+		Phash phash = new Phash();
 //		StringBuilder sb = new StringBuilder();
 //		if(sb.indexOf(","+"3".substring(3)+",")!=-1){
 //			System.out.println("6666");
 //		}
-//		CImage imA=new CImage("D:\\data\\snap\\"+imgeded.Str1);
-//		CImage imB=new CImage("D:\\data\\snap\\"+imgeded.Str2);
-//		System.out.println(phash._ph_compare_images(imA, imB));
+		CImage imA=new CImage("E:\\picture\\003.jpg");
+		CImage imB=new CImage("E:\\picture\\002.jpg");
+		System.out.println(phash._ph_compare_images(imA, imB));
 //		List<String> aList=new ArrayList<>();
 //		System.out.println(aList.size());
 //		String str="0 0/2 10,11,12,13,14,15 ? 4 * *";
@@ -61,7 +61,7 @@ public class testPhash extends imgeded {
 //		System.out.println(user.getTest());
 //		int[] a = new int[]{3, 9, 20, 15, 7};
 //		System.out.println(parallelSum(a));
-		System.out.println(123.3356%120.0);
+//		System.out.println(123.3356%120.0);
 
 
 

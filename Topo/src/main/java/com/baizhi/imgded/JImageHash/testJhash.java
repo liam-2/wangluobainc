@@ -16,10 +16,10 @@ import java.io.IOException;
 public class testJhash extends imgeded {
     public static void main(String[] args) throws IOException {
 
-        File img0 = new File("D:\\data\\snap\\"+imgeded.Str1);
-        File img1 = new File("D:\\data\\snap\\"+imgeded.Str2);
+        File img0 = new File("E:\\picture\\test3.jpg");
+        File img1 = new File("E:\\picture\\test2.jpg");
 
-        HashingAlgorithm hasher = new PerceptiveHash(32);
+        HashingAlgorithm hasher = new PerceptiveHash(64);
 
         Hash hash0 = hasher.hash(img0);
         Hash hash1 = hasher.hash(img1);
@@ -28,7 +28,6 @@ public class testJhash extends imgeded {
         System.out.println(1-similarityScore);
         if(similarityScore < 0.2) {
             System.out.println("重复图片1");
-            //Considered a duplicate in this particular case
         }
 
         SingleImageMatcher matcher = new SingleImageMatcher();
@@ -36,7 +35,6 @@ public class testJhash extends imgeded {
         matcher.addHashingAlgorithm(new PerceptiveHash(32),0.2);
         if(matcher.checkSimilarity(img0,img1)) {
             System.out.println("重复图片2");
-            //Considered a duplicate in this particular case
         }
     }
 }
