@@ -2,10 +2,7 @@ package com.rensyuu.dot;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Vector;
+import java.util.*;
 
 public class test {
 
@@ -227,6 +224,77 @@ public class test {
         return primeList;
     }
 
+    /**
+     * @description: 1023 简单选择排序
+     * @create by: linyuan
+     * @create time: 2022/9/9 13:44
+     */
+    static List<Integer> selectSort(List<Integer> numList){
+        for(int i=0;i<numList.size();i++){
+            for(int j=i+1;j<numList.size();j++){
+                if(numList.get(i)>numList.get(j)){
+                    Collections.swap(numList,i,j);
+                }
+            }
+        }
+        return numList;
+    }
+
+
+    /**
+     * @description: 1024 3*3矩阵对角线和
+     * @create by: linyuan
+     * @create time: 2022/9/9 14:23
+     */
+    static List<Integer> sumMatrixDiagonal(int[][] matrix){
+        List<Integer> numList=new ArrayList<>();
+        int sum1=0,sum2=0;
+        for(int i=0;i<3;i++){
+            sum1+=matrix[i][i];
+            sum2+=matrix[i][2-i];
+        }
+        numList.add(sum1);
+        numList.add(sum2);
+        return numList;
+    }
+
+    /**
+     * @description: 1025 数组顺序插入
+     * @create by: linyuan
+     * @create time: 2022/9/9 15:03
+     */
+    static  List<Integer> insertArray(List<Integer> numList,int n){
+            int i=0;
+            for(;i<numList.size()-1;i++){
+                if(n>=numList.get(i)&&n<numList.get(i+1)){
+                    i++;
+                    break;
+                }
+            }
+            if(n>=numList.get(numList.size()-1)){
+                numList.add(n);
+            }else{
+                numList.add(i,n);
+            }
+        return numList;
+    }
+
+    /**
+     * @description: 1026 逆序输出
+     * @create by: linyuan
+     * @create time: 2022/9/9 15:07
+     */
+    static  List<Integer> getBackwardList(List<Integer> numList){
+        int temp=numList.size()-1;
+        for(int i=0;i<temp/2;i++){
+            Collections.swap(numList,i,temp-i);
+        }
+        return numList;
+    }
+
+
+    
+
 
 
 
@@ -234,13 +302,27 @@ public class test {
     public static void main(String[] args) {
         System.out.println("请输入");
         Scanner input=new Scanner(System.in);
-        int m=input.nextInt();
+//        int m=input.nextInt();
 //        int n=input.nextInt();
+
+        String str=input.nextLine();
+        String[] numstr=str.split(" ");
+        List<Integer> numList=new ArrayList<>();
+        for(String num:numstr){
+            numList.add(Integer.valueOf(num));
+        }
+        //定义数组
+//        int[][] arr = {{1,2,3},{1,1,1},{3,2,1}};
+//        Integer[] arr={1,7,8,17,23,24,59,62,101};
+//        List<Integer> list = new ArrayList<>(arr.length);
+//        Collections.addAll(list, arr);
+
+
         long startTime_N=System.currentTimeMillis();
-        List<Integer> primeList=getPrimeNumber3(m);
+        List<Integer> primeList=getBackwardList(numList);
         long endTime_N=System.currentTimeMillis();
         System.out.println(primeList);
-        System.out.println("数量是"+primeList.size());
+//        System.out.println("数量是"+primeList.size());
         long time=1000*endTime_N-1000*startTime_N;
         System.out.println("程序运行时间："+time/1000+"ms");
     }
