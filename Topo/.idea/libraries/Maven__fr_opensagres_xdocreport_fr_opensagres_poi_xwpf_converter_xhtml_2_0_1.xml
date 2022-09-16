@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: fr.opensagres.xdocreport:fr.opensagres.poi.xwpf.converter.xhtml:2.0.1">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/fr/opensagres/xdocreport/fr.opensagres.poi.xwpf.converter.xhtml/2.0.1/fr.opensagres.poi.xwpf.converter.xhtml-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../environment/maven/LocalWarehouse/fr/opensagres/xdocreport/fr.opensagres.poi.xwpf.converter.xhtml/2.0.1/fr.opensagres.poi.xwpf.converter.xhtml-2.0.1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/fr/opensagres/xdocreport/fr.opensagres.poi.xwpf.converter.xhtml/2.0.1/fr.opensagres.poi.xwpf.converter.xhtml-2.0.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../environment/maven/LocalWarehouse/fr/opensagres/xdocreport/fr.opensagres.poi.xwpf.converter.xhtml/2.0.1/fr.opensagres.poi.xwpf.converter.xhtml-2.0.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/fr/opensagres/xdocreport/fr.opensagres.poi.xwpf.converter.xhtml/2.0.1/fr.opensagres.poi.xwpf.converter.xhtml-2.0.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../environment/maven/LocalWarehouse/fr/opensagres/xdocreport/fr.opensagres.poi.xwpf.converter.xhtml/2.0.1/fr.opensagres.poi.xwpf.converter.xhtml-2.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
